@@ -1,0 +1,11 @@
+services:
+  office:
+    build: .
+    ports:
+      - '8000:8000'
+    env_file: .env
+    volumes:
+      - office_data:/app/data
+    restart: unless-stopped
+volumes:
+  office_data:
